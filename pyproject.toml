@@ -1,14 +1,46 @@
 [tool.poetry]
 name = "rtag"
 version = "0.1.0"
-description = ""
+description = "AI-Powered Command-Line Photo Tagging Tool"
 authors = ["Yurij Mikhalevich <yurij@mikhalevi.ch>"]
+license = "MIT"
 readme = "README.md"
+repository = "https://github.com/yurijmikhalevich/rtag"
+keywords = ["image tagging", "computer vision", "photography"]
+classifiers = [
+  "Intended Audience :: End Users/Desktop",
+  "Intended Audience :: Science/Research",
+  "Topic :: Multimedia :: Graphics",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Scientific/Engineering :: Image Processing",
+  "Topic :: Scientific/Engineering :: Image Recognition",
+  "Topic :: Utilities",
+]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = ">=3.8 <3.12"
+rclip = "^1.7.26"
+torch = [
+  { version = "==2.0.1", source = "pypi", markers = "sys_platform != 'linux' or platform_machine == 'aarch64'" },
+  { version = "==2.0.1+cpu", source = "pytorch-cpu", markers = "sys_platform == 'linux' and platform_machine != 'aarch64'" }
+]
+torchvision = [
+  { version = "==0.15.2", source = "pypi", markers = "sys_platform != 'linux' or platform_machine == 'aarch64'" },
+  { version = "==0.15.2+cpu", source = "pytorch-cpu", markers = "sys_platform == 'linux' and platform_machine != 'aarch64'" }
+]
 
+[tool.poetry.scripts]
+rtag = "rtag.main:main"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[[tool.poetry.source]]
+name = "pypi"
+priority = "default"
+
+[[tool.poetry.source]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+priority = "explicit"

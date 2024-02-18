@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "rtag"
+version = "0.1.0"
+description = ""
+authors = ["Yurij Mikhalevich <yurij@mikhalevi.ch>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

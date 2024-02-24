@@ -28,6 +28,8 @@ torchvision = [
   { version = "==0.15.2", source = "pypi", markers = "sys_platform != 'linux' or platform_machine == 'aarch64'" },
   { version = "==0.15.2+cpu", source = "pytorch-cpu", markers = "sys_platform == 'linux' and platform_machine != 'aarch64'" }
 ]
+iptcinfo3 = "^2.1.4"
+tqdm = "^4.65.0"
 
 [tool.poetry.scripts]
 rtag = "rtag.main:main"

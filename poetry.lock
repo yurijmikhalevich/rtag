@@ -230,6 +230,17 @@ files = [
 ]
 
 [[package]]
+name = "iptcinfo3"
+version = "2.1.4"
+description = "A great way to get IPTCInfo"
+optional = false
+python-versions = "*"
+files = [
+    {file = "IPTCInfo3-2.1.4-py3-none-any.whl", hash = "sha256:6a1b865ed531c4a431da3c349b16bd9a1085d1bcc1bf02f7ae40ec9b538f3e06"},
+    {file = "IPTCInfo3-2.1.4.tar.gz", hash = "sha256:e24f9ed345602425f6af37e4f9bbff6fec1e957081dd4fbc5af92a89f899c963"},
+]
+
+[[package]]
 name = "jinja2"
 version = "3.1.3"
 description = "A very fast and expressive template engine."
@@ -1145,4 +1156,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8 <3.12"
-content-hash = "111c56ff4f396bd5855ee722be5c413f8086a5ccb06a3bce04dc3fff1878e57c"
+content-hash = "f3cae611c6cab59edbe7b15e1b719c40fa12f050364c46af7b2c848634be6af9"

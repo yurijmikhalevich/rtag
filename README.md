@@ -2,7 +2,7 @@
 
 **NOTICE: rtag is under active development. Expect bugs and changes.**
 
-**rtag** is a command-line photo tagging tool based on [rclip](https://github.com/yurijmikhalevich/rclip) powered by the awesome OpenAI's [CLIP](https://github.com/openai/CLIP) neural network.
+**rtag** is a command-line photo tagging tool based on [rclip](https://github.com/yurijmikhalevich/rclip) and powered by the awesome OpenAI's [CLIP](https://github.com/openai/CLIP) neural network.
 
 ## Contributing
 

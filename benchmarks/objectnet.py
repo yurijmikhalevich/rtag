@@ -17,7 +17,7 @@ import tempfile
 import json
 
 
-DATASET_DIR = os.getenv('OBJECTNET_DIR', os.path.join(os.path.dirname(__file__), 'datasets', 'objectnet-1.0'))
+DATASET_DIR = os.getenv('DATASET_DIR', os.path.join(os.path.dirname(__file__), 'datasets', 'objectnet-1.0'))
 BATCH_SIZE = int(os.getenv('BATCH_SIZE', 256))
 DEVICE = os.getenv('DEVICE', 'cpu')
 
@@ -40,15 +40,12 @@ def main(tmp_datadir: str):
   def get_tag_from_image_path(image_path: str) -> str:
     return directory_to_tag[os.path.basename(os.path.dirname(image_path))]
 
-  tags = list(directory_to_tag.values())
-
-  # write the tags to file, every one on a new line
-  # with open(os.path.join(os.path.dirname(__file__), 'objectnet-tags.txt'), 'w') as f:
-  #   f.write('\n'.join(tags))
+  tag_list = list(directory_to_tag.values())
+  tags = np.array(tag_list)
 
   # generate features for the tags
-  tag_features = model.compute_text_features(tags)
-  # tag_features = model.compute_text_features([f'photo of {tag}' for tag in tags])
+  # tag_features = model.compute_text_features(tag_list)
+  tag_features = model.compute_text_features([f'photo of {tag}' for tag in tags])
 
   top1_match = 0
   top5_match = 0

@@ -15,7 +15,7 @@ def get_imagenet_tags_filepath():
 def load_tags_from_file(path: str):
   with open(path, 'r') as f:
     return f.read().splitlines()
-
+  
 
 def main():
   arg_parser = utils.init_arg_parser()
@@ -47,7 +47,7 @@ def main():
   _, model, rclipDB = init_rclip(
     current_directory,
     args.indexing_batch_size,
-    vars(args).get("device", "cpu"),
+    vars(args).get('device', 'cpu'),
     args.exclude_dir,
     args.no_indexing,
   )
@@ -60,12 +60,12 @@ def main():
   tag_features = model.compute_text_features(tags)
 
   # loop over the images
-  print("tagging images")
+  print('tagging images')
   for image in tqdm(rclipDB.get_image_vectors_by_dir_path(current_directory), unit='images'):
     image_path = image['filepath']
-    image_vector = np.frombuffer(image['vector'], np.float32)
+    image_features = np.frombuffer(image['vector'], np.float32)
 
-    similarities = image_vector @ tag_features.T
+    similarities = image_features @ tag_features.T
 
     if args.dry_run:
       print(f'\n{image_path}')

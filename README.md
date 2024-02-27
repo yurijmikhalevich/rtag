@@ -7,7 +7,9 @@
 ## Usage
 
 When run without arguments, **rtag** tags all of the images in the current directory, including
-subdirectories, with the most relevant tags out of [the imagenet-1k tag list](https://github.com/yurijmikhalevich/rtag/blob/main/rtag/data/imagenet-labels.txt).
+subdirectories, with the most relevant tags out of [the imagenet-1k tag list](https://github.com/yurijmikhalevich/rtag/blob/main/rtag/data/imagenet-labels.txt). **rtag** writes the tags to the
+images' metadata, in a format supported by most photo management software. **rtag** supports JPG
+images only.
 
 ```bash
 cd photos && rtag

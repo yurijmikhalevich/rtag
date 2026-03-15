@@ -45,7 +45,7 @@ def main(tmp_datadir: str):
 
   # generate features for the tags
   # tag_features = model.compute_text_features(tag_list)
-  tag_features = model.compute_text_features([f'photo of {tag}' for tag in tags])
+  tag_features = model.compute_text_features([f'photo of a {tag}' for tag in tags])
 
   top1_match = 0
   top5_match = 0

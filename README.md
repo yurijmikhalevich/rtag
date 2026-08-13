@@ -1,3 +1,5 @@
+
+
 # rtag - AI-Powered Command-Line Photo Tagging Tool
 
 ### NOTICE: rtag is under active development. Expect bugs and changes.
@@ -14,6 +16,8 @@ images only.
 ```bash
 cd photos && rtag
 ```
+
+By default, **rtag** appends tags to existing metadata. To replace all existing tags instead, use the `--mode overwrite` (or `-m overwrite`) flag.
 
 ### How do I use my own tag list?
 
